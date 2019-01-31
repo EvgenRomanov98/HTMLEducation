@@ -1,0 +1,64 @@
+body {
+    background-color: #2b4251;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    display: grid;
+    grid-template: 50px repeat(8, minmax(80px, 1fr)) 50px / 50px repeat(12, minmax(100px, 1fr)) 50px;
+    grid-gap: 20px;
+    width: 100%;
+}
+
+.figure {
+    background-color: white;
+    grid-gap: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.figure1 {
+    grid-area: 2/2/4/6
+}
+
+.figure2 {
+    grid-area: 2/8/4/10
+}
+
+.figure3 {
+    grid-area: 2/12/4/14;
+}
+
+.figure4 {
+    grid-area: 4/2/6/4;
+}
+
+.figure5 {
+    grid-area: 4/4/8/6;
+}
+
+.figure6 {
+    grid-area: 4/6/8/10;
+}
+
+.figure7 {
+    grid-area: 4/10/6/14;
+}
+
+.figure8 {
+    grid-area: 6/2/8/4;
+}
+
+.figure9 {
+    grid-area: 6/10/8/12;
+}
+
+.figure10 {
+    grid-area: 6/12/8/14;
+}
+
+.figure11 {
+    grid-area:8/6/10/10;
+}

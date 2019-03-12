@@ -106,8 +106,8 @@ body {
     align-items: center;
 }
 
-.main-section-h2-athletes-768{
-   display: none;
+.main-section-h2-athletes-768 {
+    display: none;
 }
 
 .main-section-01 {
@@ -173,7 +173,7 @@ body {
     color: #FFF7FF;
 }
 
-.main-section-h2-players-768{
+.main-section-h2-players-768 {
     display: none;
 }
 
@@ -196,7 +196,7 @@ body {
 
 .main-section2Part {
     position: relative;
-    height: 500px;
+    height: 400px;
 }
 
 .main-section2Part-backgroundBeActive {
@@ -213,7 +213,7 @@ body {
     border-bottom: #9075D4 solid 0.25rem;
 }
 
-.main-section2Part-01-h6-background {
+.main-section2Part-h6-background {
     position: absolute;
     left: 1.3rem;
     bottom: -.5rem;
@@ -260,14 +260,21 @@ body {
     background: linear-gradient(rgb(117, 85, 208), rgb(80, 55, 159));
     border-radius: 10px;
     padding: 5px;
-    margin: 15vh 0 0 0;
+    margin: 15vh 0 5vh 0;
 }
 
-.footer-divText{
+.footer-section-1024px {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-divText {
     display: flex;
     flex-flow: column;
     align-items: center;
 }
+
 .footer-download-app {
     color: #ffffff;
     text-transform: uppercase;
@@ -289,4 +296,8 @@ body {
 
 .padding-footer-SVG {
     padding-bottom: .1rem;
+}
+
+.main-section2Part-h6-background-reverse {
+    display: none;
 }

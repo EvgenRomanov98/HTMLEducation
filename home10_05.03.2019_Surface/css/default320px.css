@@ -1,0 +1,292 @@
+/*header*/
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../sources/fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("../sources/fonts/OpenSans-Regular.woff") format("woff");
+}
+
+body {
+    font-family: "Open Sans", serif;
+}
+
+.header {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-around;
+    align-items: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(17, 19, 66, 0.9), rgba(17, 19, 66, 0.9)), url(../sources/img/football_320.jpg);
+    background-repeat: no-repeat;
+    padding: 0 2vw 4vh 2vw;
+}
+
+.header-part {
+    width: 100%;
+}
+
+.figure-surface {
+    display: flex;
+    justify-content: center;
+}
+
+.header-part-2 {
+    color: #fff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    padding: 0 5% 0 5%;
+    font-weight: 900;
+}
+
+.header-part-2-second-paragraph {
+    padding: 1.5rem 0 0 15%;
+}
+
+.header-and-footer-button {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.header-part-3-button {
+    text-decoration: none;
+    color: #ffffff;
+    width: 85%;
+    height: 2rem;
+    border-radius: 50px;
+    margin: .8rem 0 0 0;
+    padding: 0;
+
+    font-size: .6rem;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #5C3DB2;
+}
+
+.header-part-3-button-svg-apple {
+    margin: 0 5px 0 0;
+}
+
+.header-part-3-button-p {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.header-part-3-button-svg-googlePlay {
+    margin: 0 5px 0 -25px;
+}
+
+/*main*/
+.main-section-h2 {
+    text-transform: uppercase;
+    color: #E6E6E6;
+    font-size: 2.5rem;
+    padding: 1.5vh 0 0 10vw;
+    letter-spacing: 0.1rem;
+}
+
+.align-self-h2-athletes {
+    align-self: flex-start;
+}
+
+.main-section {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.main-section-h2-athletes-768{
+   display: none;
+}
+
+.main-section-01 {
+    background-color: #FAFAFA;
+    padding: 0 1.8rem 4rem 1.8rem;
+}
+
+.section-footballer {
+    margin: -60px 0 0 0
+}
+
+.main-section-01-div {
+    padding: 80px 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.main-section-div-p {
+    font-weight: 900;
+    border-bottom: #524597 solid 0.25rem;
+    height: 100%;
+    margin: -0.2rem 0.8rem 0 0;
+}
+
+.main-sectionName-h2 {
+    text-transform: uppercase;
+    color: #E5E5E5;
+    letter-spacing: 0.1rem;
+}
+
+.main-section-02 {
+    background-color: #F4F3F8;
+    padding: 4rem 1.8rem;
+}
+
+.main-section-div {
+    padding: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.main-section-03 {
+    background-color: #5C3DB2;
+    padding: 4rem 1.8rem;
+}
+
+.main-section-03-div-p {
+    font-weight: 900;
+    border-bottom: #fff solid 0.25rem;
+    height: 100%;
+    margin: -0.2rem .8rem 0 0;
+}
+
+.main-section-footballer03-div-h2 {
+    color: #C3BBD2;
+}
+
+.main-section-footballer03-p {
+    color: #FFF7FF;
+}
+
+.main-section-h2-players-768{
+    display: none;
+}
+
+.align-self-h2-players {
+    align-self: flex-start;
+}
+
+.section-basketballer {
+    margin: -30px 0 0 0;
+}
+
+.main-section-basketballer03 {
+    background-color: #080A33;
+    padding: 4rem 1.8rem;
+}
+
+.main-section-basketballer03-div-p {
+    color: #8470C9;
+}
+
+.main-section2Part {
+    position: relative;
+    height: 500px;
+}
+
+.main-section2Part-backgroundBeActive {
+    background-image: url(../sources/img/be-active_640.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.main-section2Part-01-h6 {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #fff;
+    border-bottom: #9075D4 solid 0.25rem;
+}
+
+.main-section2Part-01-h6-background {
+    position: absolute;
+    left: 1.3rem;
+    bottom: -.5rem;
+    background-color: #5C3DB2;
+    padding: 1.2rem 1.6rem;
+}
+
+.main-2partSection {
+    padding: 1.5rem 1.8rem 3rem 1.8rem;
+}
+
+.padding-2part {
+    padding: 0 0 1rem 0;
+}
+
+.main-section2Part-backgroundFindContact {
+    background-image: url(../sources/img/find-contact_640.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.main-section2Part-backgroundWorkIt {
+    background-image: url(../sources/img/work-it_640.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.footer {
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(17, 19, 66, 0.9), rgba(17, 19, 66, 0.9)), url(../sources/img/game_767.jpg);
+    background-size: cover;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}
+
+.backgroundFooterSurfaceSVG {
+    display: flex;
+    background: linear-gradient(rgb(117, 85, 208), rgb(80, 55, 159));
+    border-radius: 10px;
+    padding: 5px;
+    margin: 15vh 0 0 0;
+}
+
+.footer-divText{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.footer-download-app {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-weight: 900;
+}
+
+.footer-download-app-description {
+    font-size: .8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #7E7CA3;
+}
+
+.width100AndMarginFooterButton {
+    width: 100%;
+    /*margin: -2rem 0 3rem 0;*/
+}
+
+.padding-footer-SVG {
+    padding-bottom: .1rem;
+}

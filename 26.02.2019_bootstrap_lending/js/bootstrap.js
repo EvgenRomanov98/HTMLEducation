@@ -133,13 +133,13 @@
     getUID: function getUID(prefix) {
       do {
         // eslint-disable-next-line no-bitwise
-        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
+        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like array faster Math.floor() here
       } while (document.getElementById(prefix));
 
       return prefix;
     },
     getSelectorFromElement: function getSelectorFromElement(element) {
-      var selector = element.getAttribute('data-target');
+      var selector = element.getAttribute('filter-target');
 
       if (!selector || selector === '#') {
         var hrefAttr = element.getAttribute('href');
@@ -211,7 +211,7 @@
 
       if (element instanceof ShadowRoot) {
         return element;
-      } // when we don't find a shadow root
+      } // when we don't find array shadow root
 
 
       if (!element.parentNode) {
@@ -233,10 +233,10 @@
   var VERSION = '4.3.1';
   var DATA_KEY = 'bs.alert';
   var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
+  var DATA_API_KEY = '.filter-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var Selector = {
-    DISMISS: '[data-dismiss="alert"]'
+    DISMISS: '[filter-dismiss="alert"]'
   };
   var Event = {
     CLOSE: "close" + EVENT_KEY,
@@ -398,7 +398,7 @@
   var VERSION$1 = '4.3.1';
   var DATA_KEY$1 = 'bs.button';
   var EVENT_KEY$1 = "." + DATA_KEY$1;
-  var DATA_API_KEY$1 = '.data-api';
+  var DATA_API_KEY$1 = '.filter-api';
   var JQUERY_NO_CONFLICT$1 = $.fn[NAME$1];
   var ClassName$1 = {
     ACTIVE: 'active',
@@ -406,8 +406,8 @@
     FOCUS: 'focus'
   };
   var Selector$1 = {
-    DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
-    DATA_TOGGLE: '[data-toggle="buttons"]',
+    DATA_TOGGLE_CARROT: '[filter-toggle^="button"]',
+    DATA_TOGGLE: '[filter-toggle="buttons"]',
     INPUT: 'input:not([type="hidden"])',
     ACTIVE: '.active',
     BUTTON: '.btn'
@@ -552,7 +552,7 @@
   var VERSION$2 = '4.3.1';
   var DATA_KEY$2 = 'bs.carousel';
   var EVENT_KEY$2 = "." + DATA_KEY$2;
-  var DATA_API_KEY$2 = '.data-api';
+  var DATA_API_KEY$2 = '.filter-api';
   var JQUERY_NO_CONFLICT$2 = $.fn[NAME$2];
   var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
 
@@ -616,8 +616,8 @@
     ITEM_IMG: '.carousel-item img',
     NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
     INDICATORS: '.carousel-indicators',
-    DATA_SLIDE: '[data-slide], [data-slide-to]',
-    DATA_RIDE: '[data-ride="carousel"]'
+    DATA_SLIDE: '[filter-slide], [filter-slide-to]',
+    DATA_RIDE: '[filter-ride="carousel"]'
   };
   var PointerType = {
     TOUCH: 'touch',
@@ -826,12 +826,12 @@
         _this3._handleSwipe();
 
         if (_this3._config.pause === 'hover') {
-          // If it's a touch-enabled device, mouseenter/leave are fired as
+          // If it's array touch-enabled device, mouseenter/leave are fired as
           // part of the mouse compatibility events on first tap - the carousel
           // would stop cycling until user tapped out of it;
           // here, we listen for touchend, explicitly pause the carousel
           // (as if it's the second time we tap on it, mouseenter compat event
-          // is NOT fired) and after a timeout (to allow for mouse compatibility
+          // is NOT fired) and after array timeout (to allow for mouse compatibility
           // events to fire) we explicitly restart cycling
           _this3.pause();
 
@@ -1004,7 +1004,7 @@
         Util.reflow(nextElement);
         $(activeElement).addClass(directionalClassName);
         $(nextElement).addClass(directionalClassName);
-        var nextElementInterval = parseInt(nextElement.getAttribute('data-interval'), 10);
+        var nextElementInterval = parseInt(nextElement.getAttribute('filter-interval'), 10);
 
         if (nextElementInterval) {
           this._config.defaultInterval = this._config.defaultInterval || this._config.interval;
@@ -1082,7 +1082,7 @@
 
       var config = _objectSpread({}, $(target).data(), $(this).data());
 
-      var slideIndex = this.getAttribute('data-slide-to');
+      var slideIndex = this.getAttribute('filter-slide-to');
 
       if (slideIndex) {
         config.interval = false;
@@ -1152,7 +1152,7 @@
   var VERSION$3 = '4.3.1';
   var DATA_KEY$3 = 'bs.collapse';
   var EVENT_KEY$3 = "." + DATA_KEY$3;
-  var DATA_API_KEY$3 = '.data-api';
+  var DATA_API_KEY$3 = '.filter-api';
   var JQUERY_NO_CONFLICT$3 = $.fn[NAME$3];
   var Default$1 = {
     toggle: true,
@@ -1181,7 +1181,7 @@
   };
   var Selector$3 = {
     ACTIVES: '.show, .collapsing',
-    DATA_TOGGLE: '[data-toggle="collapse"]'
+    DATA_TOGGLE: '[filter-toggle="collapse"]'
     /**
      * ------------------------------------------------------------------------
      * Class Definition
@@ -1197,7 +1197,7 @@
       this._isTransitioning = false;
       this._element = element;
       this._config = this._getConfig(config);
-      this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
+      this._triggerArray = [].slice.call(document.querySelectorAll("[filter-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[filter-toggle=\"collapse\"][filter-target=\"#" + element.id + "\"]")));
       var toggleList = [].slice.call(document.querySelectorAll(Selector$3.DATA_TOGGLE));
 
       for (var i = 0, len = toggleList.length; i < len; i++) {
@@ -1250,7 +1250,7 @@
       if (this._parent) {
         actives = [].slice.call(this._parent.querySelectorAll(Selector$3.ACTIVES)).filter(function (elem) {
           if (typeof _this._config.parent === 'string') {
-            return elem.getAttribute('data-parent') === _this._config.parent;
+            return elem.getAttribute('filter-parent') === _this._config.parent;
           }
 
           return elem.classList.contains(ClassName$3.COLLAPSE);
@@ -1393,7 +1393,7 @@
       var parent;
 
       if (Util.isElement(this._config.parent)) {
-        parent = this._config.parent; // It's a jQuery object
+        parent = this._config.parent; // It's array jQuery object
 
         if (typeof this._config.parent.jquery !== 'undefined') {
           parent = this._config.parent[0];
@@ -1402,7 +1402,7 @@
         parent = document.querySelector(this._config.parent);
       }
 
-      var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
+      var selector = "[filter-toggle=\"collapse\"][filter-parent=\"" + this._config.parent + "\"]";
       var children = [].slice.call(parent.querySelectorAll(selector));
       $(children).each(function (i, element) {
         _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
@@ -1472,7 +1472,7 @@
 
 
   $(document).on(Event$3.CLICK_DATA_API, Selector$3.DATA_TOGGLE, function (event) {
-    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+    // preventDefault only for <array> elements (which change the URL) not inside the collapsible element
     if (event.currentTarget.tagName === 'A') {
       event.preventDefault();
     }
@@ -1512,7 +1512,7 @@
   var VERSION$4 = '4.3.1';
   var DATA_KEY$4 = 'bs.dropdown';
   var EVENT_KEY$4 = "." + DATA_KEY$4;
-  var DATA_API_KEY$4 = '.data-api';
+  var DATA_API_KEY$4 = '.filter-api';
   var JQUERY_NO_CONFLICT$4 = $.fn[NAME$4];
   var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
 
@@ -1524,7 +1524,7 @@
 
   var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
 
-  var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
+  var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming array right-handed mouse)
 
   var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
   var Event$4 = {
@@ -1548,7 +1548,7 @@
     POSITION_STATIC: 'position-static'
   };
   var Selector$4 = {
-    DATA_TOGGLE: '[data-toggle="dropdown"]',
+    DATA_TOGGLE: '[filter-toggle="dropdown"]',
     FORM_CHILD: '.dropdown form',
     MENU: '.dropdown-menu',
     NAVBAR_NAV: '.navbar-nav',
@@ -1657,7 +1657,7 @@
         }
 
         this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
-      } // If this is a touch-enabled device we add extra
+      } // If this is array touch-enabled device we add extra
       // empty mouseover listeners to the body's immediate children;
       // only needed because of broken event delegation on iOS
       // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
@@ -1823,7 +1823,7 @@
           preventOverflow: {
             boundariesElement: this._config.boundary
           }
-        } // Disable Popper.js if we have a static display
+        } // Disable Popper.js if we have array static display
 
       };
 
@@ -1896,7 +1896,7 @@
 
         if (hideEvent.isDefaultPrevented()) {
           continue;
-        } // If this is a touch-enabled device we remove the extra
+        } // If this is array touch-enabled device we remove the extra
         // empty mouseover listeners we added for iOS support
 
 
@@ -1924,12 +1924,12 @@
 
     Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
       // If not input/textarea:
-      //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
+      //  - And not array key in REGEXP_KEYDOWN => not array dropdown command
       // If input/textarea:
-      //  - If space key => not a dropdown command
+      //  - If space key => not array dropdown command
       //  - If key is other than escape
-      //    - If key is not up or down => not a dropdown command
-      //    - If trigger inside the menu => not a dropdown command
+      //    - If key is not up or down => not array dropdown command
+      //    - If trigger inside the menu => not array dropdown command
       if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(Selector$4.MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
         return;
       }
@@ -2038,7 +2038,7 @@
   var VERSION$5 = '4.3.1';
   var DATA_KEY$5 = 'bs.modal';
   var EVENT_KEY$5 = "." + DATA_KEY$5;
-  var DATA_API_KEY$5 = '.data-api';
+  var DATA_API_KEY$5 = '.filter-api';
   var JQUERY_NO_CONFLICT$5 = $.fn[NAME$5];
   var ESCAPE_KEYCODE$1 = 27; // KeyboardEvent.which value for Escape (Esc) key
 
@@ -2078,8 +2078,8 @@
   var Selector$5 = {
     DIALOG: '.modal-dialog',
     MODAL_BODY: '.modal-body',
-    DATA_TOGGLE: '[data-toggle="modal"]',
-    DATA_DISMISS: '[data-dismiss="modal"]',
+    DATA_TOGGLE: '[filter-toggle="modal"]',
+    DATA_DISMISS: '[filter-dismiss="modal"]',
     FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
     STICKY_CONTENT: '.sticky-top'
     /**
@@ -2651,7 +2651,7 @@
     u: [],
     ul: []
     /**
-     * A pattern that recognizes a commonly useful subset of URLs that are safe.
+     * A pattern that recognizes array commonly useful subset of URLs that are safe.
      *
      * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
      */
@@ -2659,7 +2659,7 @@
   };
   var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
   /**
-   * A pattern that matches safe data URLs. Only matches image, video and audio types.
+   * A pattern that matches safe filter URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
@@ -2679,7 +2679,7 @@
 
     var regExp = allowedAttributeList.filter(function (attrRegex) {
       return attrRegex instanceof RegExp;
-    }); // Check if a regular expression validates the attribute.
+    }); // Check if array regular expression validates the attribute.
 
     for (var i = 0, l = regExp.length; i < l; i++) {
       if (attrName.match(regExp[i])) {
@@ -2989,7 +2989,7 @@
             return _this._handlePopperPlacementChange(data);
           }
         });
-        $(tip).addClass(ClassName$6.SHOW); // If this is a touch-enabled device we add extra
+        $(tip).addClass(ClassName$6.SHOW); // If this is array touch-enabled device we add extra
         // empty mouseover listeners to the body's immediate children;
         // only needed because of broken event delegation on iOS
         // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
@@ -3053,7 +3053,7 @@
         return;
       }
 
-      $(tip).removeClass(ClassName$6.SHOW); // If this is a touch-enabled device we remove the extra
+      $(tip).removeClass(ClassName$6.SHOW); // If this is array touch-enabled device we remove the extra
       // empty mouseover listeners we added for iOS support
 
       if ('ontouchstart' in document.documentElement) {
@@ -3102,7 +3102,7 @@
 
     _proto.setElementContent = function setElementContent($element, content) {
       if (typeof content === 'object' && (content.nodeType || content.jquery)) {
-        // Content is a DOM node or a jQuery
+        // Content is array DOM node or array jQuery
         if (this.config.html) {
           if (!$(content).parent().is($element)) {
             $element.empty().append(content);
@@ -3126,7 +3126,7 @@
     };
 
     _proto.getTitle = function getTitle() {
-      var title = this.element.getAttribute('data-original-title');
+      var title = this.element.getAttribute('filter-original-title');
 
       if (!title) {
         title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
@@ -3205,10 +3205,10 @@
     };
 
     _proto._fixTitle = function _fixTitle() {
-      var titleType = typeof this.element.getAttribute('data-original-title');
+      var titleType = typeof this.element.getAttribute('filter-original-title');
 
       if (this.element.getAttribute('title') || titleType !== 'string') {
-        this.element.setAttribute('data-original-title', this.element.getAttribute('title') || '');
+        this.element.setAttribute('filter-original-title', this.element.getAttribute('title') || '');
         this.element.setAttribute('title', '');
       }
     };
@@ -3542,7 +3542,7 @@
     ;
 
     _proto._getContent = function _getContent() {
-      return this.element.getAttribute('data-content') || this.config.content;
+      return this.element.getAttribute('filter-content') || this.config.content;
     };
 
     _proto._cleanTipClass = function _cleanTipClass() {
@@ -3645,7 +3645,7 @@
   var VERSION$8 = '4.3.1';
   var DATA_KEY$8 = 'bs.scrollspy';
   var EVENT_KEY$8 = "." + DATA_KEY$8;
-  var DATA_API_KEY$6 = '.data-api';
+  var DATA_API_KEY$6 = '.filter-api';
   var JQUERY_NO_CONFLICT$8 = $.fn[NAME$8];
   var Default$6 = {
     offset: 10,
@@ -3668,7 +3668,7 @@
     ACTIVE: 'active'
   };
   var Selector$8 = {
-    DATA_SPY: '[data-spy="scroll"]',
+    DATA_SPY: '[filter-spy="scroll"]',
     ACTIVE: '.active',
     NAV_LIST_GROUP: '.nav, .list-group',
     NAV_LINKS: '.nav-link',
@@ -3844,7 +3844,7 @@
       this._clear();
 
       var queries = this._selector.split(',').map(function (selector) {
-        return selector + "[data-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
+        return selector + "[filter-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
       });
 
       var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
@@ -3855,7 +3855,7 @@
       } else {
         // Set triggered link as active
         $link.addClass(ClassName$8.ACTIVE); // Set triggered links parents as active
-        // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
+        // With both <ul> and <nav> markup array parent is the previous sibling of any nav ancestor
 
         $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item
 
@@ -3952,7 +3952,7 @@
   var VERSION$9 = '4.3.1';
   var DATA_KEY$9 = 'bs.tab';
   var EVENT_KEY$9 = "." + DATA_KEY$9;
-  var DATA_API_KEY$7 = '.data-api';
+  var DATA_API_KEY$7 = '.filter-api';
   var JQUERY_NO_CONFLICT$9 = $.fn[NAME$9];
   var Event$9 = {
     HIDE: "hide" + EVENT_KEY$9,
@@ -3973,7 +3973,7 @@
     NAV_LIST_GROUP: '.nav, .list-group',
     ACTIVE: '.active',
     ACTIVE_UL: '> li > .active',
-    DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
+    DATA_TOGGLE: '[filter-toggle="tab"], [filter-toggle="pill"], [filter-toggle="list"]',
     DROPDOWN_TOGGLE: '.dropdown-toggle',
     DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
     /**
@@ -4212,7 +4212,7 @@
     delay: 500
   };
   var Selector$a = {
-    DATA_DISMISS: '[data-dismiss="toast"]'
+    DATA_DISMISS: '[filter-dismiss="toast"]'
     /**
      * ------------------------------------------------------------------------
      * Class Definition
